@@ -80,29 +80,38 @@ const handleLogin = async (e) => {
 };
     return (
         <div className="login">
-            <div className="item">
-                <h2>Welcome Back,</h2>
-                <form onSubmit={handleLogin}>
-                    <input type="text" placeholder="Email" name="email"/>
-                    <input type="password" placeholder="Password" name="password"/>
-                    <button disabled = {loading}>{loading ? "Loading" : "Sign In"}</button>
-                </form>
-            </div>
-            <div className="separator"></div>
-            <div className="item">
+        <div className="background-design"></div>
+        <div className="login-container">
+          <div className="item">
+            <h2>Welcome Back,</h2>
+            <form onSubmit={handleLogin}>
+              <input type="email" placeholder="Email" name="email" />
+              <input type="password" placeholder="Password" name="password" />
+              <button type="submit">Sign In</button>
+            </form>
+          </div>
+          <div className="separator"></div>
+          <div className="item">
             <h2>Create An Account</h2>
-                <form onSubmit={handleRegister}>
-                    <label htmlFor="file">
-                        <img src={avatar.url || "./avatar.png"}  alt="" />
-                        Upload an Image</label>
-                    <input type="file" id="file" style={{display : "none"}} onChange={handleAvatar}/>
-                    <input type="text" placeholder="Username" name="username"/>
-                    <input type="text" placeholder="Email" name="email"/>
-                    <input type="password" placeholder="Password" name="password"/>
-                    <button disabled = {loading}>{loading ? "Loading" : "Sign Up"}</button>
-                </form>
-            </div>
+            <form onSubmit={handleRegister}>
+              <label htmlFor="file">
+                <img src={avatar.url || "./avatar.png"} alt="Avatar" />
+                Upload an Image
+              </label>
+              <input 
+                type="file" 
+                id="file" 
+                style={{display: "none"}} 
+                onChange={handleAvatar}
+              />
+              <input type="text" placeholder="Username" name="username" />
+              <input type="email" placeholder="Email" name="email" />
+              <input type="password" placeholder="Password" name="password" />
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
         </div>
+      </div>
     );
 };
 
